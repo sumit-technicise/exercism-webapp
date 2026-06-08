@@ -10,9 +10,9 @@ module ViewComponents
           view: :tracks
         },
         {
-          title: "Jiki (Coding Fundamentals)",
-          description: "The ultimate way to learn to code",
-          path: Exercism::Routes.jiki_url,
+          title: "Learn To Code with Jiki",
+          description: "Learn to code and build in the LLM-era.",
+          path: "https://jiki.io",
           icon: 'nav-coding-fundamentals',
           view: :coding_fundamentals
         },
