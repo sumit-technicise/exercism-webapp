@@ -288,6 +288,12 @@ namespace :api do
     end
 
     post "markdown/parse" => "markdown#parse", as: "parse_markdown"
+
+    namespace :jiki do
+      get :entitled_users, to: 'entitled_users#index'
+      get 'user_status/:exercism_id', to: 'user_statuses#show', as: :user_status,
+        constraints: { exercism_id: /\d+/ }
+    end
   end
 
   namespace :oauth do
