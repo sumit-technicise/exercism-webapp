@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2026_05_31_084553) do
+ActiveRecord::Schema[7.1].define(version: 2026_07_17_120000) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -1089,6 +1089,16 @@ ActiveRecord::Schema[7.1].define(version: 2026_05_31_084553) do
     t.index ["uniqueness_key"], name: "index_site_updates_on_uniqueness_key", unique: true
   end
 
+  create_table "solution_assistant_conversations", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
+    t.bigint "solution_id", null: false
+    t.bigint "user_id", null: false
+    t.json "messages"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["solution_id"], name: "index_solution_assistant_conversations_on_solution_id", unique: true
+    t.index ["user_id"], name: "index_solution_assistant_conversations_on_user_id"
+  end
+
   create_table "solution_comments", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "solution_id", null: false
     t.bigint "user_id", null: false
@@ -1977,6 +1987,8 @@ ActiveRecord::Schema[7.1].define(version: 2026_05_31_084553) do
   add_foreign_key "site_updates", "tracks"
   add_foreign_key "site_updates", "users", column: "author_id"
   add_foreign_key "solution_comments", "solutions"
+  add_foreign_key "solution_assistant_conversations", "solutions"
+  add_foreign_key "solution_assistant_conversations", "users"
   add_foreign_key "solution_tags", "exercises"
   add_foreign_key "solution_tags", "solutions"
   add_foreign_key "solution_tags", "users"

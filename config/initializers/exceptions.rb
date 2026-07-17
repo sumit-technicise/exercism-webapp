@@ -1,3 +1,7 @@
+class AssistantConversationAccessDeniedError < RuntimeError; end
+
+class InvalidHMACSignatureError < RuntimeError; end
+
 class BadgeCriteriaNotFulfilledError < RuntimeError; end
 
 class TrophyCriteriaNotFulfilledError < RuntimeError; end
@@ -62,8 +66,6 @@ class InvalidMetricPeriodError < RuntimeError; end
 class InvalidMetricTypeError < RuntimeError; end
 
 class InvalidCommunityVideoUrlError < RuntimeError; end
-
-class ChatGPTTooManyRequestsError < RuntimeError; end
 
 class NoPublishedSolutionForRepresentationError < RuntimeError; end
 

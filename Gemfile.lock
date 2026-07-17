@@ -693,6 +693,7 @@ DEPENDENCIES
   humanize
   image_processing (~> 1.2)
   jsbundling-rails
+  jwt
   kaminari
   listen (>= 3.0.5, < 4.0)
   mandate (~> 2.0)
